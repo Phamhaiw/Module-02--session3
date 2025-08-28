@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Nhập tên khách hàng:");
+        String tenKhachHang = sc.nextLine();
+
+        System.out.print("Nhập tên sản phẩm:");
+        String tenSanPham = sc.nextLine();
+
+        System.out.print("Nhập giá sản phẩm:");
+        double giaSanPham = sc.nextDouble();
+
+        System.out.print("Nhập số lượng mua:");
+        int soLuongMua = sc.nextInt();
+
+        System.out.print("Khach co the thanh vien khong? (true/false): ");
+        boolean coTheThanhVien = sc.nextBoolean();
+
+
+        double thanhTien = giaSanPham * soLuongMua;
+
+
+
+        double giamGia = coTheThanhVien ?  thanhTien * 0.1 : 0;
+
+
+        double thueVAT = thanhTien * 0.08;
+
+        double tongThanhToan = thanhTien - giamGia + thueVAT;
+
+        System.out.println("Khach hang: " + tenKhachHang);
+        System.out.println("San pham: " + tenSanPham);
+        System.out.println("Gia: " + giaSanPham);
+        System.out.println("So luong: " + soLuongMua);
+        System.out.println("Thành Tiền:  " + thanhTien + "VND");
+        System.out.println("Giảm Giá Thành Viên(10%):  " + giamGia + "VND");
+        System.out.println("The thanh vien: " + coTheThanhVien);
+        System.out.println("Tiền VAt(8%): " + thueVAT + "VND");
+        System.out.println("TONG TIEN:  " + tongThanhToan + "VND");
+
+
+    }
+};
